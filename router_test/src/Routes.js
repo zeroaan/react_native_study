@@ -3,11 +3,13 @@ import { NativeRouter, Route } from "react-router-native"
 
 import Home from "~/pages/Home"
 import About from "~/pages/About"
+import Navbar from "~/components/Navbar"
 
-const Router = () => {
+const Routes = () => {
   return (
     <>
       <NativeRouter>
+        <Navbar />
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
       </NativeRouter>
@@ -15,4 +17,4 @@ const Router = () => {
   )
 }
 
-export default Router
+export default Routes

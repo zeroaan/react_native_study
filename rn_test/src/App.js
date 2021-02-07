@@ -1,8 +1,31 @@
 import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import 'react-native-gesture-handler';
 
-import Loading from '~/components/Loading';
+import MainPage from '~/components/MainPage';
+import LoginPage from '~/components/LoginPage';
+import RegisterPage from '~/components/RegisterPage';
+
+const Stack = createStackNavigator({
+  Home: {
+    screen: MainPage,
+    navigationOptions: {
+      header: null,
+    },
+  },
+});
 
 const App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Main" component={MainPage} />
+        <Stack.Screen name="Login" component={LoginPage} />
+        <Stack.Screen name="Register" component={RegisterPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
   /*
   const [isLoading, setIsLoading] = useState(true);
 
@@ -35,7 +58,6 @@ const App = () => {
     </>
   );
   */
-  return <Loading />;
 };
 
 export default App;

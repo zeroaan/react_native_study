@@ -1,11 +1,12 @@
 import React from "react"
-import { StyleSheet, View, Text } from "react-native"
+import { StyleSheet, View, Text, Button } from "react-native"
 
-const Home = () => {
+const Home = ({ history }) => {
   return (
     <>
       <View style={styles.container}>
         <Text>Home</Text>
+        <Button title="About" onPress={() => history.push("/about")} />
       </View>
     </>
   )
