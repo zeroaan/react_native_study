@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <>
       <View style={styles.container}>
-        <View>
+        <View style={styles.nav}>
           <Link to="/">
             <Text>Home</Text>
           </Link>
@@ -16,7 +16,7 @@ const Navbar = () => {
             <Text>About</Text>
           </Link>
         </View>
-        <View>
+        <View style={styles.nav}>
           <Button title="Home" onPress={() => history.push("/")} />
           <Button title="About" onPress={() => history.push("/about")} />
         </View>
@@ -27,10 +27,11 @@ const Navbar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+  },
+  nav: {
+    flexDirection: "row",
   },
 })
 
